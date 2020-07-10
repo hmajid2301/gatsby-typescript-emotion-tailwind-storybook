@@ -30,6 +30,7 @@ const plugins = [
       display: 'swap',
     },
   },
+  'gatsby-plugin-postcss',
 ];
 
 // Bundle analyzer, dev only

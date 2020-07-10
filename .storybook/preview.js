@@ -11,6 +11,10 @@ import esLocaleData from 'react-intl/locale-data/es';
 
 import { EmotionThemeProvider, GatsbyIntlProvider } from './decorators';
 import GlobalStyles from '../src/components/Layout/GlobalStyles';
+import '~/styles/globals.css';
+import './main.css';
+
+configure(require.context('../src', true, /\.stories\.mdx$/), module);
 
 // Gatsby Setup
 // ============================================
@@ -37,6 +41,10 @@ addParameters({
   },
   options: {
     panelPosition: 'right',
+    storySort: (a, b) =>
+      a[1].kind === b[1].kind
+        ? 0
+        : a[1].id.localeCompare(b[1].id, undefined, { numeric: true }),
   },
 });
 

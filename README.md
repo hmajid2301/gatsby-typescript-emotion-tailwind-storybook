@@ -11,11 +11,14 @@
   <a href="https://storybook.js.org">
     <img alt="Storybook JS" src="https://raw.githubusercontent.com/react-theming/storybook-addon-material-ui/master/docs/logos/Storybook.png" width="50" />
   </a>
+  <a href="https://tailwindcss.com">
+    <img alt="Tailwind CSS" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fraw.githubusercontent.com%2Fgithub%2Fexplore%2F882462b8ecc337fd9c9b2572bc463a1cbc88fb6a%2Ftopics%2Ftailwind%2Ftailwind.png&f=1&nofb=1" width="50" />
+  </a>
 </p>
 
 <h1 align="center">
   <div>
-  Gatsby + TypeScript + Emotion + Storybook
+  Gatsby + TypeScript + Emotion + Storybook + TailwindCSS
   </div>
   <div style="font-style: italic; font-size: 20px">
   (and React Intl + SVGR + Jest)
@@ -26,7 +29,7 @@
 
 ## ✨ About
 
-This repo is a starter to get a **Gatsby** + **TypeScript** + **Emotion** project (with React Intl + SVGR + Jest) working with **Storybook**.
+This repo is a starter to get a **Gatsby** + **TypeScript** + **Emotion** + **TailwindCSS** project (with React Intl + SVGR + Jest + TW + Gitlab CI) working with **Storybook**.
 
 You can use this starter as a launch point or reference the `gatsby-config.js` and `/.storybook/webpack.config.js` config to see how to get the libraries working with Storybook.
 
@@ -36,9 +39,11 @@ You can use this starter as a launch point or reference the `gatsby-config.js` a
 - [Gatsby.js](https://www.gatsbyjs.org/)
 - [Typescript](https://www.typescriptlang.org/)
 - [Emotion.js](https://emotion.sh/)
+- [TailwindCSS](https://tailwind.css/)
 - [gatsby-plugin-intl](https://github.com/wiziple/gatsby-plugin-intl/)
 - [gatsby-plugin-svgr](https://github.com/zabute/gatsby-plugin-svgr/)
 - [Jest](https://jestjs.io/)
+- [Gitlab CI](https://docs.gitlab.com/ee/ci/)
 
 ## 📖 Related Reading
 
@@ -152,6 +157,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
     ├── src
     ├── .gitignore
     ├── .prettierrc
+    ├── .gitlab-ci.yml
     ├── gatsby-browser.js
     ├── gatsby-config.js
     ├── gatsby-node.js
@@ -167,23 +173,25 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+4.  **`.gitlab-ci.yml`**: This file tells gitlab CI what jobs to run and when.
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+5.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+6.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+7.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
 
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+8.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
 
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
+9.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
 
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+10. **`LICENSE`**: Gatsby is licensed under the MIT license.
 
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+11. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
 
-12. **`README.md`**: A text file containing useful reference information about your project.
+12. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+
+13. **`README.md`**: A text file containing useful reference information about your project.
 
 ## 🎓 Learning Gatsby
 
@@ -196,3 +204,7 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 ## 💫 Deploy
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/duncanleung/gatsby-typescript-emotion-storybook)
+
+## Appendix
+
+Forked from [duncanleung](https://github.com/duncanleung/gatsby-typescript-emotion-storybook)

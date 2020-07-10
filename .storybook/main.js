@@ -1,16 +1,10 @@
 module.exports = {
-  stories: ['../src/**/*.stories.tsx'],
+  stories: ['../src/**/*.stories.@(tsx|mdx)'],
   addons: [
-    '@storybook/addon-actions/register',
-    '@storybook/addon-viewport/register',
-    'storybook-addon-intl/register',
-    {
-      name: '@storybook/preset-typescript',
-      options: {
-        tsLoaderOptions: {
-          transpileOnly: true,
-        },
-      },
-    },
+    '@storybook/addon-a11y',
+    '@storybook/addon-controls',
+    '@storybook/addon-essentials',
+    '@storybook/preset-typescript',
+    '@storybook/addon-viewport',
   ],
 };

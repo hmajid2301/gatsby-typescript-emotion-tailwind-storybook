@@ -1,0 +1,47 @@
+image: node:12.13.0
+
+stages:
+  - test
+
+before_script:
+  - yarn install
+
+lint:
+  stage: test
+  except:
+    - master
+    - tags
+  script:
+    - yarn lint
+
+format:
+  stage: test
+  except:
+    - master
+    - tags
+  script:
+    - yarn format:check
+
+types:check:
+  stage: test
+  except:
+    - master
+    - tags
+  script:
+    - yarn types:check
+
+tests:unit:
+  stage: test
+  except:
+    - master
+    - tags
+  script:
+    - yarn test --silent
+
+tests:coverage:
+  stage: test
+  only:
+    - master
+  script:
+    - yarn coverage
+  coverage: /All\sfiles.*?\s+(\d+.\d+)/
